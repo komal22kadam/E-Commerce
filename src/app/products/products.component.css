@@ -1,0 +1,9 @@
+.product-items img{
+    width:200px;
+}
+.product-border{
+    text-align:center;
+}
+.borders{
+    border: 1px solid rgba(183, 181, 181, 0.06);
+}

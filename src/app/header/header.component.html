@@ -1,0 +1,27 @@
+<!-- <nav class="nav">
+  <h1>E-commerce</h1>
+  <div class="search-box" >
+    <input type="text" placeholder="search for products"/>
+    <button>Search</button>
+  </div>
+  <ul class="list">
+    <li><a routerLink="/">Home</a></li>
+    <li><a href="#">Login</a></li>
+    <li><a routerLink="/cart-page">Cart ({{cartItem}})</a></li>
+  </ul>
+</nav> -->
+<!-- <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav> -->
+<nav class="navbar navbar-light bg-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand">E Commerce</a>
+    <div class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <a style="width: 130px;" class="btn btn-outline-success" routerLink="/cart-page">Cart ({{cartItem}})</a>
+    </div>
+  </div>
+</nav>

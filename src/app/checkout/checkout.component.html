@@ -1,0 +1,33 @@
+<div class="checkout">
+    <div class="row">
+        <div class="col-sm-7 shadow-sm p-3 mb-5 bg-body rounded align-center mt-5">
+            <h3>Add shipping address</h3>
+            <form [formGroup]="ShippingForm" (ngSubmit)="onSubmit()">
+                <div class="mt-2">
+                  <input type="email" id="email" placeholder="Enter Email" formControlName="email">
+                  <div *ngIf="ShippingForm.get('email')?.invalid && ShippingForm.get('email')?.touched">
+                    <div *ngIf="ShippingForm.get('email')?.errors?.['required']">Email is required.</div>
+                    <div *ngIf="ShippingForm.get('email')?.errors?.['email']">Invalid email format.</div>
+                  </div>
+                </div>
+                <div class="mt-2">
+                  <input type="address" id="address" placeholder="Enter Address"  formControlName="address">
+                  <div *ngIf="ShippingForm.get('address')?.invalid && ShippingForm.get('address')?.touched">
+                    <div *ngIf="ShippingForm.get('address')?.errors?.['required']">address is required.</div>
+                  </div>
+                </div>
+                <div class="mt-2">
+                    <input type="contact" id="contact" placeholder="Enter Contact"  formControlName="contact">
+                    <div *ngIf="ShippingForm.get('contact')?.invalid && ShippingForm.get('contact')?.touched">
+                      <div *ngIf="ShippingForm.get('contact')?.errors?.['required']">Contact is required.</div>
+                    </div>
+                  </div>
+                <button type="submit" class="btn btn-primary mt-2" [disabled]="ShippingForm.invalid">Order Now</button>
+              </form>
+        </div>
+        <div class="col-sm-3 mt-5">
+            <h5>Total Amount: Rs.{{totalVal}}</h5>
+            <h6>Payment Method: <b>Pay On Delivery</b></h6>
+        </div>
+    </div>
+</div>

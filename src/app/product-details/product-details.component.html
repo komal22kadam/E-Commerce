@@ -1,0 +1,21 @@
+<div class="row details-wrapper" *ngIf="productData">
+  <div class="col-sm-6">
+    <img class="product-img" src="{{productData.imgUrl}}" alt="">
+  </div>
+  <div class="col-sm-6 mt-5">
+    <div class="details">
+       <h2>{{productData.name}}</h2>
+       <h4>{{productData.subName}}</h4>
+       <h6>Rs.{{productData.price}}</h6>
+       <div class="quantity">
+        <button (click) = "prodQuantity('min')">-</button>
+        <input type="text" value="{{productQuantity}}">
+        <button (click) = "prodQuantity('max')">+</button>
+       </div>
+       <button class="form-button mt-4" (click) = "AddToCart()">ADD TO CART</button>
+       <!-- <button *ngIf = "showRemoveCart" class="form-button" (click) = "removeToCart(productData.id)">REMOVE TO CART</button> -->
+       <button class="form-button ms-2" routerLink = "/cart-page">BUY NOW</button>
+       
+    </div>
+  </div>
+</div>

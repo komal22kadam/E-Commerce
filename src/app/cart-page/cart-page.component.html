@@ -1,0 +1,41 @@
+<div class="cart-page mt-4">
+    <h1>Cart Page</h1>
+    <div class="row" *ngIf="FCartData.length > 0">
+        <div class="col-sm-8"> 
+            <div class="row">
+                <div class="col-sm-12 details shadow-sm p-3 mb-5 bg-body rounded" *ngFor="let item of FCartData">
+                    <div class="row padding-right">
+                        <ul>
+                            <li>
+                                <img src="{{item.imgUrl}}">
+                            </li>
+                            <li>
+                                <span>{{item.name}}</span>
+                            </li>
+                            <li>
+                                <span>Price:Rs.{{item.price}}</span>
+                            </li>
+                            <li>
+                                <span>Quantity: 1</span>
+                            </li>
+                            <li>
+                                <button class="btn btn-light" (click) = "removeToCart(item.id)">Remove to cart</button>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      <div class="col-sm-3 summary shadow-sm p-3 mb-5 bg-body rounded">
+        <h3>Summary</h3>
+            <ul>
+                <li><span>Amount: Rs.{{totalPrice}}</span></li>
+                <li><span>Tax:Rs.{{tax}}</span></li>
+                <li><span>Total:Rs.{{finalPrice}}</span></li>
+                <button (click)="checkout()" class=" mt-4 btn btn-primary">Checkout</button>
+            </ul>
+        </div>
+     
+    </div>
+</div>

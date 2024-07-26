@@ -1,0 +1,23 @@
+
+
+<div class="main wrapper">
+    <h2>Trending products</h2>
+    <div class="row">
+        <div class="col-sm-2 mt-5 ms-5 product-border shadow-sm p-3 mb-5 bg-body rounded" *ngFor = "let item of AllProducts"> 
+            <div class="product-items">
+               <img src="{{item.imgUrl}}">
+            </div>
+            <div class="product-details">
+                <h4 class="name-heading">{{item.name}}</h4>
+                <h6 class="name-subheading">{{item.subName}}</h6>
+                <div class="product-price">
+                    <h6>Rs.{{item.price}}</h6>
+                </div>
+            </div>
+            <div class="product-footer">
+                <button routerLink="/details/{{item.id}}" class="btn btn-light borders">View Details</button><br>
+                <button (click) = "addToCart(item.id)" class="btn btn-light borders mt-2">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
